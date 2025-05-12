@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: python-tailwind-app
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: MONGO_URI
+        value: mongodb+srv://Sarthak:3232@cluster.q6vsapo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
+      - key: OPENROUTER_API_KEY
+        value: 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
+      - key: OPENROUTER_MODEL
+        value: deepseek/deepseek-prover-v2:free

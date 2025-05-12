@@ -1,0 +1,23 @@
+# Stage 1: Build the frontend (node + tailwind)
+FROM node:18 AS frontend
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json for npm install
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the frontend files
+COPY . .
+
+# Build the frontend assets
+RUN npm run build-css
+
+# Expose port
+EXPOSE 3000
+
+# Start the frontend server (if it's a static server or any other logic)
+CMD ["npm", "start"]
