@@ -515,7 +515,8 @@ def shutdown():
         return jsonify({"message": f"Error during shutdown: {e}"}), 500
 
 def run_server():
-    app.run(debug=True, port=5001, use_reloader=False)
+    app.run(debug=True, host="0.0.0.0", port=5000, use_reloader=False)
+
 
 if __name__ == '__main__':
     logger.info("Starting Flask server in a separate thread.")

@@ -16,8 +16,3 @@ COPY . .
 # Build the frontend assets
 RUN npm run build-css
 
-# Expose port
-EXPOSE 3000
-
-# Start the frontend server (if it's a static server or any other logic)
-CMD ["npm", "start"]
